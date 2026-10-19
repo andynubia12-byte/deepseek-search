@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="DeepSeek 搜索：克制、清晰、专注结果的网页搜索体验。">
+  <title>DeepSeek 搜索</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/theme-init.js"></script>
+</head>
+<body>
+  <a class="skip-link" id="skip-link" href="#home-main">跳到主要内容</a>
+
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.488.488 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6a3.6 3.6 0 1 1 0-7.2 3.6 3.6 0 0 1 0 7.2z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78 3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/></symbol>
+    <symbol id="i-warning" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></symbol>
+    <symbol id="i-brand-wordmark" viewBox="0 0 143 23">
+      <path d="M78.6784 18.6813H77.1077V16.2462H78.6784C79.6513 16.2462 80.6341 16.0037 81.2672 15.3298C81.9009 14.6559 82.14 13.6222 82.14 12.589C82.14 11.5559 81.9109 10.5222 81.2672 9.84884C80.6246 9.17496 79.6513 8.93245 78.6784 8.93245C77.7056 8.93245 76.7227 9.17496 76.0885 9.84884C75.4549 10.5227 75.2157 11.5559 75.2157 12.589V22.5899H72.4604V6.50684H75.2157V7.53106H75.7209C75.7756 7.46792 75.8304 7.41428 75.8857 7.36064C76.5752 6.73146 77.6307 6.50684 78.6684 6.50684C80.2944 6.50684 81.9193 6.91138 82.9849 8.03451C84.0499 9.15764 84.4265 10.8826 84.4265 12.5991C84.4265 14.3156 84.0404 16.0316 82.9849 17.1637C81.9288 18.2958 80.2944 18.6824 78.6784 18.6824V18.6813Z" fill="currentColor"></path><path d="M36.7486 6.93999H38.3188V9.37511H36.7486C35.7752 9.37511 34.7929 9.61762 34.1593 10.2915C33.5256 10.9654 33.287 11.9991 33.287 13.0323C33.287 14.0654 33.5167 15.0986 34.1593 15.7725C34.8019 16.4463 35.7752 16.6888 36.7486 16.6888C37.722 16.6888 38.7049 16.4463 39.3385 15.7725C39.9722 15.0986 40.2108 14.0654 40.2108 13.0323V3.02246H42.9655V19.115H40.2108V18.0908H39.7056C39.6503 18.1534 39.5955 18.2076 39.5402 18.2612C38.8513 18.8898 37.7952 19.115 36.7576 19.115C35.1321 19.115 33.5066 18.711 32.4416 17.5879C31.3766 16.4648 31 14.7393 31 13.0233C31 11.3073 31.3856 9.5908 32.4416 8.45873C33.5066 7.3356 35.1321 6.93999 36.7486 6.93999Z" fill="currentColor"></path><path d="M56.7855 12.8145V13.794H49.4483V11.8445H54.3151C54.2051 11.1348 53.948 10.4699 53.4887 9.98433C52.8277 9.28363 51.8079 9.03218 50.7982 9.03218C49.7886 9.03218 48.7688 9.28363 48.1078 9.98433C47.4468 10.685 47.2076 11.7545 47.2076 12.8151C47.2076 13.8756 47.4462 14.9535 48.1078 15.6452C48.7688 16.337 49.788 16.5979 50.7982 16.5979C51.8085 16.5979 52.8277 16.3465 53.4887 15.6452C53.5804 15.5463 53.6631 15.4385 53.7458 15.3306H56.4642C56.2256 16.1755 55.849 16.9393 55.2796 17.5322C54.1777 18.6911 52.479 19.1135 50.7982 19.1135C49.1175 19.1135 47.4188 18.7 46.3169 17.5322C45.215 16.3644 44.811 14.5852 44.811 12.8151C44.811 11.0449 45.2061 9.25681 46.3169 8.09792C47.4283 6.93903 49.1175 6.5166 50.7982 6.5166C52.479 6.5166 54.1777 6.93009 55.2796 8.09792C56.3904 9.26575 56.7855 11.0449 56.7855 12.8151V12.8145Z" fill="currentColor"></path><path d="M70.6151 12.8145V13.794H63.2779V11.8445H68.1447C68.0341 11.1348 67.7776 10.4699 67.3183 9.98433C66.6573 9.28363 65.6375 9.03218 64.6278 9.03218C63.6181 9.03218 62.5984 9.28363 61.9374 9.98433C61.2763 10.685 61.0372 11.7545 61.0372 12.8151C61.0372 13.8756 61.2758 14.9535 61.9374 15.6452C62.5984 16.337 63.6181 16.5979 64.6278 16.5979C65.6375 16.5979 66.6573 16.3465 67.3183 15.6452C67.4105 15.5463 67.4927 15.4385 67.5748 15.3306H70.2938C70.0546 16.1755 69.678 16.9393 69.1086 17.5322C68.0067 18.6911 66.3081 19.1135 64.6278 19.1135C62.9476 19.1135 61.2484 18.7 60.1465 17.5322C59.0446 16.3644 58.6406 14.5852 58.6406 12.8151C58.6406 11.0449 59.0357 9.25681 60.1465 8.09792C61.2579 6.93903 62.9471 6.5166 64.6278 6.5166C66.3086 6.5166 68.0067 6.93009 69.1086 8.09792C70.22 9.26575 70.6151 11.0449 70.6151 12.8151V12.8145Z" fill="currentColor"></path><path d="M92.2781 19.1146C93.9589 19.1146 95.657 18.8721 96.7589 18.1804C97.8607 17.4886 98.2653 16.437 98.2653 15.3949C98.2653 14.3528 97.8697 13.2922 96.7589 12.6094C95.657 11.9266 93.9583 11.6746 92.2781 11.6746C91.5612 11.6746 90.9002 11.5757 90.4319 11.3153C89.9637 11.0454 89.7893 10.6414 89.7893 10.2369C89.7893 9.83234 89.9547 9.41941 90.4319 9.15846C90.9002 8.88858 91.626 8.79917 92.3418 8.79917C93.0576 8.79917 93.7834 8.89808 94.2528 9.15846C94.721 9.42835 94.8954 9.83234 94.8954 10.2369H97.6959C97.6959 9.19422 97.3383 8.13424 96.3375 7.45142C95.3368 6.76861 93.803 6.5166 92.2786 6.5166C90.7543 6.5166 89.2211 6.75911 88.2197 7.45142C87.219 8.14318 86.8603 9.19422 86.8603 10.2369C86.8603 11.2796 87.2184 12.3395 88.2197 13.0224C89.2205 13.7052 90.7538 13.9572 92.2786 13.9572C93.0682 13.9572 93.941 14.0561 94.464 14.3165C94.9881 14.5774 95.1714 14.9903 95.1714 15.3949C95.1714 15.7994 94.9881 16.2124 94.464 16.4733C93.941 16.7337 93.1419 16.8326 92.3524 16.8326C91.5629 16.8326 90.7543 16.7337 90.2397 16.4733C89.7256 16.2129 89.5323 15.7994 89.5323 15.3949H86.2998C86.2998 16.4376 86.6943 17.4975 87.8063 18.1804C88.9171 18.8632 90.5979 19.1146 92.2786 19.1146H92.2781Z" fill="currentColor"></path><path d="M112.094 12.8145V13.794H104.757V11.8445H109.624C109.514 11.1348 109.257 10.4699 108.798 9.98433C108.136 9.28363 107.117 9.03218 106.106 9.03218C105.095 9.03218 104.077 9.28363 103.416 9.98433C102.755 10.685 102.517 11.7545 102.517 12.8151C102.517 13.8756 102.755 14.9535 103.416 15.6452C104.077 16.337 105.097 16.5979 106.106 16.5979C107.116 16.5979 108.136 16.3465 108.798 15.6452C108.889 15.5463 108.972 15.4385 109.054 15.3306H111.772C111.533 16.1755 111.157 16.9393 110.588 17.5322C109.486 18.6911 107.787 19.1135 106.106 19.1135C104.425 19.1135 102.727 18.7 101.625 17.5322C100.524 16.3644 100.12 14.5852 100.12 12.8151C100.12 11.0449 100.515 9.25681 101.625 8.09792C102.737 6.93903 104.427 6.5166 106.106 6.5166C107.786 6.5166 109.486 6.93009 110.588 8.09792C111.699 9.26575 112.093 11.0449 112.093 12.8151L112.094 12.8145Z" fill="currentColor"></path><path d="M125.924 12.8145V13.794H118.586V11.8445H123.453C123.344 11.1348 123.086 10.4699 122.627 9.98433C121.966 9.28363 120.947 9.03218 119.936 9.03218C118.926 9.03218 117.907 9.28363 117.246 9.98433C116.585 10.685 116.346 11.7545 116.346 12.8151C116.346 13.8756 116.585 14.9535 117.246 15.6452C117.907 16.337 118.927 16.5979 119.936 16.5979C120.946 16.5979 121.966 16.3465 122.627 15.6452C122.719 15.5463 122.801 15.4385 122.884 15.3306H125.602C125.363 16.1755 124.987 16.9393 124.418 17.5322C123.316 18.6911 121.617 19.1135 119.936 19.1135C118.256 19.1135 116.558 18.7 115.456 17.5322C114.354 16.3644 113.949 14.5852 113.949 12.8151C113.949 11.0449 114.344 9.25681 115.456 8.09792C116.566 6.93903 118.256 6.5166 119.936 6.5166C121.617 6.5166 123.315 6.93009 124.418 8.09792C125.529 9.26575 125.924 11.0449 125.924 12.8151V12.8145Z" fill="currentColor"></path><path d="M130.524 3.02246H127.77V19.115H130.524V3.02246Z" fill="currentColor"></path><path d="M135.227 12.4374L139.744 19.1136H136.337L131.819 12.4374L136.337 7.07324H139.744L135.227 12.4374Z" fill="currentColor"></path><g clip-path="url(#brand-wordmark-clip)"><path d="M26.5174 3.39471C26.235 3.2567 26.1137 3.52006 25.9487 3.65346C25.8923 3.69659 25.8446 3.75294 25.7969 3.80469C25.3846 4.24516 24.9027 4.53439 24.2737 4.49989C23.3536 4.44814 22.5682 4.73737 21.8735 5.44119C21.7258 4.57349 21.2353 4.0554 20.4889 3.72304C20.0985 3.55054 19.7034 3.37746 19.4297 3.00197C19.2388 2.73459 19.1865 2.43673 19.091 2.14289C19.0301 1.96579 18.9697 1.78466 18.7656 1.75418C18.5442 1.71968 18.4574 1.90541 18.3705 2.06067C18.0232 2.69549 17.8887 3.39471 17.9019 4.10313C17.9324 5.6965 18.6051 6.96556 19.9421 7.86834C20.0939 7.97184 20.133 8.07535 20.0852 8.22658C19.9938 8.53766 19.8857 8.83955 19.7903 9.15063C19.7293 9.34901 19.6384 9.39271 19.4257 9.30588C18.692 8.9994 18.0583 8.54571 17.4982 7.99772C16.5477 7.07827 15.6881 6.06336 14.6162 5.26869C14.3644 5.08296 14.1125 4.91045 13.8521 4.746C12.7584 3.68394 13.9952 2.81164 14.2816 2.70814C14.5812 2.60003 14.3857 2.22857 13.4179 2.23317C12.4502 2.2372 11.5646 2.56151 10.4359 2.99335C10.2708 3.05832 10.0972 3.10547 9.91951 3.14457C8.8954 2.95022 7.83162 2.90709 6.72069 3.03245C4.62877 3.26533 2.95777 4.25436 1.72954 5.94261C0.254043 7.97184 -0.0932678 10.2777 0.33167 12.6824C0.778458 15.2171 2.07225 17.3153 4.06008 18.9558C6.12152 20.6567 8.49577 21.4905 11.2047 21.3306C12.8498 21.2358 14.6812 21.0155 16.7473 19.2669C17.2682 19.5262 17.8151 19.6297 18.7219 19.7074C19.4205 19.7723 20.0933 19.6729 20.6143 19.5648C21.4302 19.3923 21.3739 18.6367 21.0789 18.4981C18.6874 17.3843 19.2124 17.8374 18.7351 17.4706C19.9501 16.033 21.8063 13.4776 22.379 9.99821C22.4353 9.61409 22.5072 9.073 22.4986 8.76192C22.494 8.57216 22.5377 8.49856 22.7545 8.47671C23.3536 8.40771 23.935 8.24383 24.4692 7.94999C26.0188 7.10357 26.6439 5.71318 26.7911 4.04678C26.8129 3.79204 26.7865 3.52869 26.5174 3.39471ZM13.0143 18.3946C10.6964 16.5724 9.5722 15.9726 9.10816 15.9985C8.67402 16.0244 8.75222 16.5212 8.84768 16.8449C8.94773 17.1646 9.07768 17.3849 9.25996 17.6655C9.38589 17.8512 9.47272 18.1272 9.13404 18.3348C8.38766 18.7965 7.08985 18.1796 7.0289 18.1491C5.51833 17.2595 4.25559 16.0853 3.36546 14.4793C2.50581 12.9337 2.0067 11.2753 1.92447 9.50542C1.90262 9.07818 2.02855 8.92695 2.45406 8.84932C3.01413 8.74582 3.59144 8.72397 4.15093 8.80619C6.51656 9.15178 8.53027 10.2092 10.2185 11.8848C11.1822 12.8388 11.9114 13.979 12.6623 15.0929C13.461 16.2757 14.3201 17.4027 15.4144 18.3268C15.8008 18.6505 16.109 18.8966 16.404 19.0783C15.5144 19.1778 14.0297 19.1991 13.0143 18.3958V18.3946ZM14.1252 11.2489C14.1252 11.0591 14.277 10.9079 14.4679 10.9079C14.511 10.9079 14.5501 10.9165 14.5852 10.9292C14.6329 10.9464 14.6766 10.9723 14.7111 11.0114C14.7721 11.0718 14.8066 11.158 14.8066 11.2489C14.8066 11.4386 14.6548 11.5899 14.4639 11.5899C14.273 11.5899 14.1252 11.4386 14.1252 11.2489ZM17.5759 13.0188C17.3545 13.1096 17.1331 13.1873 16.9203 13.1959C16.5903 13.2131 16.2303 13.0791 16.0348 12.9153C15.7312 12.6605 15.5139 12.5179 15.423 12.0734C15.3839 11.8837 15.4057 11.5899 15.4402 11.4214C15.5185 11.0585 15.4316 10.8257 15.1757 10.614C14.9676 10.4415 14.7025 10.3938 14.4115 10.3938C14.3029 10.3938 14.2034 10.3461 14.1292 10.3076C14.0079 10.2472 13.9078 10.096 14.0033 9.91023C14.0338 9.84985 14.1815 9.70322 14.216 9.67734C14.6111 9.45251 15.0665 9.52612 15.488 9.6946C15.8784 9.85445 16.174 10.1477 16.5989 10.5623C17.033 11.0631 17.1112 11.2011 17.3585 11.5772C17.554 11.871 17.7317 12.1729 17.8536 12.5185C17.9272 12.7341 17.8317 12.9107 17.5759 13.0188Z" fill="currentColor"></path></g><defs><clipPath id="brand-wordmark-clip"><rect width="26.634" height="19.6" fill="white" transform="translate(0.163086 1.75)"></rect></clipPath></defs>
+    </symbol>
+  </svg>
+
+  <div id="connection-banner" class="connection-banner" role="alert" hidden>
+    <div class="connection-banner-inner">
+      <svg class="icon" aria-hidden="true"><use href="#i-warning"></use></svg>
+      <div class="connection-banner-text">
+        <strong>无法连接搜索服务</strong>
+        <span>请启动本地 Node.js 服务后重试。<code id="server-url"></code></span>
+      </div>
+      <button class="text-action" type="button" id="retry-connection">重试</button>
+    </div>
+  </div>
+
+  <section class="view home" id="home-view" aria-label="首页">
+    <header class="home-header">
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式">
+          <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
+        </button>
+        <button class="icon-btn" type="button" data-open-settings aria-label="设置" title="设置">
+          <svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="home-main" id="home-main">
+      <div class="hero">
+        <h1 class="logo">
+          <svg class="brand-svg" viewBox="0 0 143 23" aria-hidden="true" focusable="false"><use href="#i-brand-wordmark"></use></svg>
+          <img class="brand-cn" src="assets/search-wordmark.png" width="605" height="260" alt="" aria-hidden="true" draggable="false">
+          <span class="visually-hidden">DeepSeek 搜索</span>
+        </h1>
+
+        <div class="search-wrap home-search-wrap">
+          <form class="search-shell home-search" id="home-form" role="search" autocomplete="off" novalidate>
+            <button class="search-icon-btn" type="submit" aria-label="搜索">
+              <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+            </button>
+            <input class="search-input" id="home-input" name="q" type="text" maxlength="128"
+                   placeholder="搜索网页"
+                   aria-label="搜索" role="combobox" aria-autocomplete="list" aria-expanded="false"
+                   aria-controls="home-suggestions" aria-haspopup="listbox"
+                   autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+            <button class="clear-btn" id="home-clear" type="button" aria-label="清空搜索" hidden>
+              <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+            </button>
+          </form>
+          <ul class="suggestions" id="home-suggestions" role="listbox" aria-label="搜索建议" hidden></ul>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section class="view results" id="results-view" aria-label="搜索结果" hidden>
+    <header class="results-header">
+      <div class="results-header-inner">
+        <a class="mini-logo" id="results-home-link" href="./" aria-label="返回 DeepSeek 搜索首页">
+          <svg class="brand-svg" viewBox="0 0 143 23" aria-hidden="true" focusable="false"><use href="#i-brand-wordmark"></use></svg>
+          <img class="brand-cn" src="assets/search-wordmark.png" width="605" height="260" alt="" aria-hidden="true" draggable="false">
+        </a>
+
+        <div class="search-wrap results-search-wrap">
+          <form class="search-shell compact" id="results-form" role="search" autocomplete="off" novalidate>
+            <button class="search-icon-btn" type="submit" aria-label="搜索">
+              <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+            </button>
+            <input class="search-input" id="results-input" name="q" type="text" maxlength="128"
+                   placeholder="搜索网页"
+                   aria-label="搜索" role="combobox" aria-autocomplete="list" aria-expanded="false"
+                   aria-controls="results-suggestions" aria-haspopup="listbox"
+                   autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+            <button class="clear-btn" id="results-clear" type="button" aria-label="清空搜索" hidden>
+              <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+            </button>
+          </form>
+          <ul class="suggestions" id="results-suggestions" role="listbox" aria-label="搜索建议" hidden></ul>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式">
+            <svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg>
+          </button>
+          <button class="icon-btn" type="button" data-open-settings aria-label="设置" title="设置">
+            <svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="results-toolbar">
+        <nav class="tabs" aria-label="结果筛选">
+          <button class="tab active" type="button" data-filter="all" aria-pressed="true">综合</button>
+          <button class="tab" type="button" data-filter="quality" aria-pressed="false" title="仅显示相关性排序较高的结果">高质量</button>
+          <button class="tab" type="button" data-filter="authority" aria-pressed="false" title="仅显示权威性较高的结果">高权威</button>
+        </nav>
+        <div class="results-tools">
+          <label class="count-label" for="count-select">每页</label>
+          <select class="select" id="count-select" aria-label="每次搜索结果数量">
+            <option value="10">10 条</option>
+            <option value="20">20 条</option>
+            <option value="30">30 条</option>
+            <option value="50">50 条</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="results-main" id="results-main">
+      <h1 class="visually-hidden" id="results-heading">搜索结果</h1>
+      <div class="results-meta" id="results-meta" aria-live="polite"></div>
+      <div id="results-content"></div>
+    </main>
+  </section>
+
+  <footer class="site-footer">
+    <span>Powered by DeepSeek Search</span>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <span>Independent Project</span>
+  </footer>
+
+  <dialog class="modal" id="settings-dialog" aria-labelledby="settings-title">
+    <div class="modal-card">
+      <header class="modal-head">
+        <div>
+          <p class="modal-eyebrow">DeepSeek Search</p>
+          <h2 id="settings-title">设置</h2>
+        </div>
+        <button class="icon-btn" type="button" data-close-dialog aria-label="关闭设置">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+        </button>
+      </header>
+
+      <div class="modal-body">
+        <section class="settings-section" aria-labelledby="settings-api-title">
+          <div class="section-heading">
+            <h3 id="settings-api-title">连接</h3>
+            <span class="status-chip" id="settings-status-badge" data-state="pending">检查中</span>
+          </div>
+          <p class="section-desc">搜索请求由本地服务转发至 DeepSeek Search API，API Key 不会进入浏览器存储。</p>
+
+          <div class="callout callout-warning" id="settings-offline" hidden>
+            无法连接到本地服务。请在项目目录运行 <code>npm start</code> 后重试。
+          </div>
+          <div class="callout callout-success" id="settings-env-note" hidden>
+            已通过环境变量 <code>DEEPSEEK_API_KEY</code> 配置密钥。修改后需重启服务。
+          </div>
+
+          <form id="settings-key-form" autocomplete="off" novalidate>
+            <label class="field-label" for="api-key-input">API Key</label>
+            <div class="key-row">
+              <input class="text-input" id="api-key-input" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false" aria-describedby="api-key-hint">
+              <button class="icon-btn" type="button" id="toggle-key-visibility" aria-label="显示 API Key" aria-pressed="false" title="显示或隐藏 API Key">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg>
+              </button>
+            </div>
+            <p class="hint" id="api-key-hint">密钥只保存在本地服务内存中，不写入磁盘或浏览器存储；服务重启后需重新输入。测试连接会发起一次真实搜索请求。</p>
+            <div class="row-actions">
+              <button class="btn btn-primary" type="button" id="save-key">保存</button>
+              <button class="btn" type="button" id="verify-key">测试连接</button>
+              <button class="btn btn-ghost" type="button" id="clear-key">清除</button>
+            </div>
+            <p class="feedback" id="key-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="settings-section" aria-labelledby="settings-prefs-title">
+          <h3 id="settings-prefs-title">搜索</h3>
+          <div class="pref-row">
+            <span class="pref-text" id="pref-count-label"><b>每次结果数</b><small>修改后会在当前结果页重新搜索</small></span>
+            <select class="select" id="pref-count" aria-labelledby="pref-count-label">
+              <option value="10">10 条</option>
+              <option value="20">20 条</option>
+              <option value="30">30 条</option>
+              <option value="50">50 条</option>
+            </select>
+          </div>
+          <div class="pref-row">
+            <span class="pref-text" id="pref-content-label"><b>返回网页正文</b><small>开启后可在结果中展开正文摘录</small></span>
+            <label class="switch">
+              <input type="checkbox" id="pref-content" aria-labelledby="pref-content-label">
+              <span class="switch-track" aria-hidden="true"></span>
+            </label>
+          </div>
+          <div class="pref-row">
+            <span class="pref-text" id="pref-open-mode-label"><b>打开结果</b><small>点击结果标题时</small></span>
+            <select class="select" id="pref-open-mode" aria-labelledby="pref-open-mode-label">
+              <option value="newtab">新建标签页</option>
+              <option value="same">直接切换</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="settings-theme-title">
+          <h3 id="settings-theme-title">外观</h3>
+          <div class="segmented" role="radiogroup" aria-label="外观主题">
+            <button type="button" role="radio" data-theme-choice="system" aria-checked="true">跟随系统</button>
+            <button type="button" role="radio" data-theme-choice="light" aria-checked="false">浅色</button>
+            <button type="button" role="radio" data-theme-choice="dark" aria-checked="false">深色</button>
+          </div>
+        </section>
+
+        <details class="settings-details">
+          <summary>搜索语法与快捷键</summary>
+          <div class="details-body">
+            <p class="hint">语法会原样传给 DeepSeek Search API，可以组合使用。点击示例直接试搜。</p>
+            <table class="syntax-table">
+              <thead><tr><th scope="col">语法</th><th scope="col">说明</th><th scope="col">示例</th></tr></thead>
+              <tbody>
+                <tr><td><code>site:</code></td><td>限定站点</td><td><button class="syntax-example" type="button" data-example="DeepSeek site:github.com">DeepSeek site:github.com</button></td></tr>
+                <tr><td><code>-site:</code></td><td>排除站点</td><td><button class="syntax-example" type="button" data-example="DeepSeek -site:zhihu.com">DeepSeek -site:zhihu.com</button></td></tr>
+                <tr><td><code>"…"</code></td><td>精确短语</td><td><button class="syntax-example" type="button" data-example="DeepSeek &quot;搜索 API&quot;">DeepSeek "搜索 API"</button></td></tr>
+                <tr><td><code>-</code></td><td>排除关键词</td><td><button class="syntax-example" type="button" data-example="DeepSeek -广告">DeepSeek -广告</button></td></tr>
+                <tr><td><code>lang:</code></td><td>限定语言</td><td><button class="syntax-example" type="button" data-example="DeepSeek lang:zh,en">DeepSeek lang:zh,en</button></td></tr>
+                <tr><td><code>after:</code> <code>before:</code></td><td>发布时间</td><td><button class="syntax-example" type="button" data-example="DeepSeek API after:2025">DeepSeek API after:2025</button></td></tr>
+              </tbody>
+            </table>
+            <div class="shortcut-list">
+              <div class="shortcut"><span class="kbd-group"><kbd>/</kbd></span><span>聚焦搜索框</span></div>
+              <div class="shortcut"><span class="kbd-group"><kbd>⌘</kbd><kbd>K</kbd></span><span>聚焦搜索框</span></div>
+              <div class="shortcut"><span class="kbd-group"><kbd>↑</kbd><kbd>↓</kbd></span><span>浏览建议</span></div>
+              <div class="shortcut"><span class="kbd-group"><kbd>Enter</kbd></span><span>搜索或选择</span></div>
+              <div class="shortcut"><span class="kbd-group"><kbd>Esc</kbd></span><span>关闭建议</span></div>
+            </div>
+          </div>
+        </details>
+
+        <p class="modal-footnote">
+          由 DeepSeek Search API 提供搜索结果。
+          <a href="https://api-docs.deepseek.com/zh-cn/guides/search" target="_blank" rel="noopener noreferrer">官方文档<svg class="icon icon-xs" aria-hidden="true"><use href="#i-external"></use></svg></a>
+        </p>
+      </div>
+
+      <footer class="modal-foot">
+        <button class="btn btn-primary" type="button" data-close-dialog>完成</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">这个搜索页面需要启用 JavaScript 才能运行。</div>
+  </noscript>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

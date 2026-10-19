@@ -1,0 +1,12 @@
+# 本地密钥，绝不提交
+.env
+.env.local
+.env.*.local
+
+node_modules/
+.DS_Store
+*.log
+
+# 浏览器自动化临时目录
+.chrome-test*/
+.ds-browser-*/
